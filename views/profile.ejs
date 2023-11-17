@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+    <title>Dragon Ball Z Trainer App</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+<div class="container">
+
+    <div class="page-header text-center">
+        <h1>Dragon Ball Z Training </i></h1>
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    </div>
+
+
+        <!-- LOCAL INFORMATION -->
+        <!-- <div class="col-sm-6">
+            <div class="well">
+                <h3><span class="fa fa-user"></span> Local</h3>
+
+                <% if (user.local.email) { %>
+                    <p>
+                        <strong>id</strong>: <%= user._id %><br>
+                        <strong>email</strong>: <%= user.local.email %><br>
+                        <strong>password</strong>: <%= user.local.password %>
+                    </p>
+
+                    <a href="/unlink/local" class="btn btn-default">Unlink</a>
+                <% } else { %>
+                    <a href="/connect/local" class="btn btn-default">Connect Local</a>
+                <% } %>
+
+            </div>
+        </div> -->
+        <div class="img text-center">
+        <h4>Train your Dragon Ball Z Character to a power level of over 9000!</h4>
+        </div>
+          <section class="profilePage">
+        <div class="messages text-center">
+          <ul class="messages">
+          <% for(var i=0; i<messages.length; i++) {%>
+            <li class="message">
+              <span class="name"><%= messages[i].name %></span>
+              <span class="senzubean-span"><%= messages[i].senzubean %></span>
+              <button class="senzuBean">Senzu Bean</button>
+              <span class="training-span"><%= messages[i].training %></span>
+              <button class="training">Hyperbolic Time Chamber Training</button>
+              <span class="ki-span"><%= messages[i].ki %></span>
+              <button class="ki">Ki replenishmenty</button>
+             
+           
+              <span><i class="fa fa-trash-o" aria-hidden="true"></i></span>
+              <span>Total =<%= (messages[i].senzubean + messages[i].training + messages[i].ki) %></span>
+            </li>
+          <% } %>
+          </ul>
+        <% if (user.local.email) { %>
+          <form action="/messages" method="POST">
+            <input type="text" placeholder="name" name="name">
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+        <% } %>
+
+</section>
+
+<script src="main.js"></script>
+
+</body>
+</html>
